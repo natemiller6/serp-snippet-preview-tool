@@ -59,3 +59,5 @@ Open to contributions, feature ideas, or custom forks for your own clients. Subm
 ## 📄 License
 
 [MIT License](./LICENSE)
+
+<!-- Trigger GitHub Pages build -->
