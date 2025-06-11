@@ -1,3 +1,5 @@
+🔗 [Live Demo](https://natemiller6.github.io/serp-snippet-preview-tool/)
+
 # SERP Snippet Preview Tool – Free SEO Tool by The SEO Marketing Dad
 
 Curious how your **title tag** and **meta description** will actually look in Google search results? This lightweight, open-source **SERP snippet preview tool** lets you visualize and optimize your search snippets before you hit publish.
