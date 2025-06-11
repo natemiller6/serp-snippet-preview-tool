@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Google SERP Snippet Preview Tool</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 2rem;
+      max-width: 700px;
+      margin: auto;
+    }
+    h1 {
+      font-size: 1.75rem;
+      margin-bottom: 1rem;
+    }
+    label {
+      display: block;
+      margin-top: 1rem;
+      font-weight: bold;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 0.5rem;
+      margin-top: 0.25rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 1rem;
+    }
+    .preview {
+      margin-top: 2rem;
+      border-top: 1px solid #ddd;
+      padding-top: 1.5rem;
+    }
+    .serp-title {
+      color: #1a0dab;
+      font-size: 1.2rem;
+      margin-bottom: 0.25rem;
+    }
+    .serp-url {
+      color: #006621;
+      font-size: 0.9rem;
+    }
+    .serp-desc {
+      font-size: 0.95rem;
+      color: #545454;
+      margin-top: 0.25rem;
+    }
+    .warning {
+      color: #b30000;
+      font-size: 0.85rem;
+    }
+  </style>
+</head>
+<body>
+  <h1>Google SERP Snippet Preview Tool</h1>
+  <p>Type your title and meta description to see how they may appear in Google's search results.</p>
+
+  <label for="title">Title Tag</label>
+  <input type="text" id="title" maxlength="100" placeholder="e.g. Best SEO Tools for Small Businesses" />
+  <span id="title-warning" class="warning"></span>
+
+  <label for="description">Meta Description</label>
+  <textarea id="description" rows="3" maxlength="300" placeholder="e.g. Discover the top free SEO tools to grow your website traffic and rank higher on Google."></textarea>
+  <span id="desc-warning" class="warning"></span>
+
+  <div class="preview">
+    <div class="serp-title" id="serp-title"></div>
+    <div class="serp-url">www.example.com</div>
+    <div class="serp-desc" id="serp-desc"></div>
+  </div>
+
+  <script>
+    const titleInput = document.getElementById('title');
+    const descInput = document.getElementById('description');
+    const titlePreview = document.getElementById('serp-title');
+    const descPreview = document.getElementById('serp-desc');
+    const titleWarning = document.getElementById('title-warning');
+    const descWarning = document.getElementById('desc-warning');
+
+    function updatePreview() {
+      const title = titleInput.value;
+      const description = descInput.value;
+
+      titlePreview.textContent = title;
+      descPreview.textContent = description;
+
+      titleWarning.textContent = title.length > 60 ? `⚠️ Title is ${title.length} characters (may be truncated)` : '';
+      descWarning.textContent = description.length > 155 ? `⚠️ Description is ${description.length} characters (may be truncated)` : '';
+    }
+
+    titleInput.addEventListener('input', updatePreview);
+    descInput.addEventListener('input', updatePreview);
+
+    updatePreview();
+  </script>
+</body>
+</html>
